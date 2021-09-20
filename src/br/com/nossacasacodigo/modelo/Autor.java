@@ -1,7 +1,7 @@
 package br.com.nossacasacodigo.modelo;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Autor {
 
@@ -46,6 +46,17 @@ public class Autor {
         }
 
         this.descricao = descricao;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        Autor outroEmail = (Autor) object;
+        return email.equals(outroEmail.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email);
     }
 
     @Override
